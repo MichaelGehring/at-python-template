@@ -1,7 +1,7 @@
 # AT Python Template
 
 [![build](https://img.shields.io/github/actions/workflow/status/at-gmbh/at-python-template/tests-pip.yml?branch=master)](https://github.com/at-gmbh/at-python-template/actions?query=branch%3Amaster+)
-![Python Version](https://img.shields.io/badge/python-3.7%20--%203.11-blue)
+![Python Version](https://img.shields.io/badge/python-3.8%20--%203.11-blue)
 [![License](https://img.shields.io/github/license/at-gmbh/at-python-template)](https://github.com/at-gmbh/at-python-template/blob/master/LICENSE)
 ![GitHub Repo stars](https://img.shields.io/github/stars/at-gmbh/at-python-template?style=social)
 
@@ -13,7 +13,7 @@ This is the official Python Project Template of Alexander Thamm GmbH (AT). It is
 2. `cookiecutter https://github.com/at-gmbh/at-python-template`
 3. profit!
 
-This will install or update cookiecutter on your system and create a new project in the current folder using the AT Python Template. Please note: Python 3.7 or higher is required.
+This will install or update cookiecutter on your system and create a new project in the current folder using the AT Python Template. Please note: Python 3.8 or higher is required.
 
 > This template requires `cookiecutter>=1.7.2`. If you experience issues installing it into your default conda environment, we recommend to create a new clean environment with nothing but the `cookiecutter` package installed.
 
@@ -44,6 +44,7 @@ Unfortunately, cookiecutter does not allow us to show any description of the opt
 * Select your `ci_pipeline`
   - `none` (default): Don't use any CI/CD pipeline.
   - `gitlab`: If you plan to use GitLab, this option will add a CI/CD Pipeline definition for [GitLab CI/CD](https://docs.gitlab.com/ee/ci/). The pipeline includes basic steps to build, test and deploy your code. The deployment steps do nothing but echoing a String, as deployment is very project-specific.
+   - `az-devops`: If you plan to use [Azure DevOps](https://azure.microsoft.com/en-us/products/devops), this option will add a CI pipeline and templates for CD pipelines. For the CD pipelines to work, you need to add project specific information.
 * `create_cli` (yes or no): if you plan to build an application with a command line interface (CLI), select *yes* here. This will integrate a template for the CLI into your project - minimal boilerplate guaranteed! (We're leveraging the awesome [typer](https://typer.tiangolo.com/) library for this.)
 * `config_file`: select your preferred config format. It is best practice to store your configuration separate from your code, even for small projects, but because there are a gazillion ways to do this, each project seems to reinvents the wheel. We want to provide a few options to set you up with a working configuration:
   - `yaml`: use [YAML](https://yaml.org/) as your configuration file format. Easy to read and write, widely adopted, relies on the [PyYAML](https://pyyaml.org/) package.
